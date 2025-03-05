@@ -1,6 +1,6 @@
 services:
   mergeprinall:
-    image: ghcr.io/yanorei32/merge-pr-in-all:latest@sha256:08cec917cc568246aa7e2044ea0dc3d2e2e7f0f578b01ce39351809f92d12b47
+    image: ghcr.io/yanorei32/merge-pr-in-all:latest@sha256:b5911579a74ae1b42447ad6551377ffa8122964cdcf894f5c414152dcdb92b8f
     hostname: mergeprinall
     container_name: mergeprinall__mergeprinall
     restart: unless-stopped
