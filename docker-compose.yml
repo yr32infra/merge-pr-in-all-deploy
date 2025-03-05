@@ -1,0 +1,26 @@
+services:
+  mergeprinall:
+    image: ghcr.io/yanorei32/merge-pr-in-all:latest@sha256:08cec917cc568246aa7e2044ea0dc3d2e2e7f0f578b01ce39351809f92d12b47
+    hostname: mergeprinall
+    container_name: mergeprinall__mergeprinall
+    restart: unless-stopped
+
+    environment:
+      LOGIN: yanorei32
+      TOKEN: ${TOKEN}
+      LISTEN: 0.0.0.0:3000
+      AUTH_TOKEN: ${AUTH_TOKEN}
+
+    command: /usr/bin/merge-pr-in-all
+
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+
+    networks:
+      - default
+
+networks:
+  default:
+    name: mergeprinall__default
